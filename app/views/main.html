@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1>Hello There</h1>
+  <p>Welcome to fake Shopping Site!</p>
+</div>
+
+<div class="row marketing">
+<div ng-repeat = "product in products">
+<hr>
+  <h4>{{product.name}}</h4>
+  <p>
+   {{product.description}}
+  </p>
+  
+  <input type="number" ng-model="product.quantity" ng-disabled="product.status" style="width:40px;"><span>x {{product.price}}</span>
+  <button class="btn btn-primary" ng-hide="product.status" ng-click="addProduct(product)" ng-disabled="!product.quantity">Add To Cart</button>
+  <button class="btn btn-success" ng-show="product.status" ng-disabled="true">Added!</button>
+  
+
+</div>
+<div class="footer">
+Click on Cart in NavBar to Proceed
+</div>
+</div>
